@@ -1,49 +1,53 @@
+*This project has been created as part of the 42 curriculum by ezakyure.*
+
 # Libft
 
-This project is part of the new 42 curriculum and marks the first step into building solid foundations in C.
+## Description
 
-This repository focuses on reimplementing selected libc functions from scratch and turning them into a reusable library: `libft.a`.
+Libft is a reusable C library developed as the first 42 curriculum project. It
+reimplements selected libc functions and provides additional string, memory,
+file-descriptor output, and singly linked-list utilities. The library is built
+as `libft.a` and can be linked into later C projects.
 
-## Why this project matters
+## Instructions
 
-Libft is one of those projects that makes the hidden mechanics of C feel visible. It helps you practice:
-
-- memory management and pointer logic
-- string handling in a low-level context
-- writing reusable and well-structured functions
-- keeping code clean, readable, and intentional
-
-In short, this is the kind of project that becomes the base for everything that comes after it.
-
-## What is included
-
-This library covers:
-
-- character checks and conversions
-- memory operations
-- string manipulation
-- conversion, splitting, and trimming utilities
-- file descriptor output functions
-- singly linked list helpers
-
-## Build
-
-To compile the library:
+Compile the library from the project root:
 
 ```sh
 make
 ```
 
-This creates the archive `libft.a`.
-
-## Usage
-
-To use it in a program:
+This creates `libft.a`. Include `libft.h` in a program and link the library:
 
 ```sh
 cc main.c -I. -L. -lft
 ```
 
-## Note
+Available Makefile rules are `all`, `clean`, `fclean`, and `re`.
 
-This repo may look serious, but the real charm is that it stays simple, practical, and honest. It has the spirit of 42: a little patience, a little confusion, and a lot of satisfaction when things finally click.
+## Library contents
+
+- Character checks and conversions: `ft_isalpha`, `ft_isdigit`,
+  `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, and `ft_tolower`.
+- Memory and string functions: `ft_memset`, `ft_bzero`, `ft_memcpy`,
+  `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_strlen`, `ft_strlcpy`,
+  `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, and `ft_strnstr`.
+- Allocation and conversion: `ft_atoi`, `ft_calloc`, `ft_strdup`,
+  `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, and `ft_itoa`.
+- String callbacks and output: `ft_strmapi`, `ft_striteri`,
+  `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, and `ft_putnbr_fd`.
+- Linked-list utilities: `ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`,
+  `ft_lstlast`, `ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`,
+  `ft_lstiter`, and `ft_lstmap`.
+
+## Resources
+
+- `man 3` pages for the libc functions reimplemented by this project.
+- The C standard library documentation at https://man7.org/linux/man-pages/.
+- The project subject supplied by 42.
+
+## AI usage
+
+AI was used to help write this README file. It was also used while coding,
+as a last resort for complex errors that could not be resolved through web
+searches or the official documentation.

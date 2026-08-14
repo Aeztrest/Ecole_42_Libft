@@ -6,7 +6,7 @@
 /*   By: ezakyure <ezakyure@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 19:26:56 by ezakyure          #+#    #+#             */
-/*   Updated: 2026/08/03 19:39:48 by ezakyure         ###   ########.fr       */
+/*   Updated: 2026/08/14 01:31:19 by ezakyure         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,20 @@ static char	**free_all(char **result)
 	return (NULL);
 }
 
+static char	**ft_new_arr(char const *s, char c)
+{
+	if (!s)
+		return (NULL);
+	return (malloc((ft_word_counter(s, c) + 1) * sizeof(char *)));
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char			**arr;
 	unsigned int	j;
 	unsigned int	a;
 
-	arr = (char **)malloc((ft_word_counter(s, c) + 1) * sizeof(char *));
+	arr = ft_new_arr(s, c);
 	if (!arr)
 		return (NULL);
 	a = -1;

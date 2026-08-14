@@ -6,14 +6,14 @@
 /*   By: ezakyure <ezakyure@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/03 17:09:07 by ezakyure          #+#    #+#             */
-/*   Updated: 2026/08/03 19:39:23 by ezakyure         ###   ########.fr       */
+/*   Updated: 2026/08/06 17:40:04 by ezakyure         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_check(unsigned long long result, const char *str, int sign,
-			int i)
+static int	ft_check(long result, const char *str, int sign,
+			size_t i)
 {
 	if (result > 922337203685477580 || (result == 922337203685477580 && (str[i]
 				- '0') > 7))
@@ -27,7 +27,7 @@ static int	ft_check(unsigned long long result, const char *str, int sign,
 		return (1);
 }
 
-static int	ft_white_space(int i, const char *str)
+static size_t	ft_white_space(size_t i, const char *str)
 {
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
@@ -36,8 +36,8 @@ static int	ft_white_space(int i, const char *str)
 
 int	ft_atoi(const char *str)
 {
-	int			i;
-	long long	result;
+	size_t		i;
+	long		result;
 	int			sign;
 	int			re;
 

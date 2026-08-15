@@ -69,7 +69,7 @@ CYAN		=	\033[0;36m
 all: banner $(NAME) success
 
 banner:
-	@clear
+	@clear 2>/dev/null || true
 	@rm -f $(PROGRESS)
 	@echo "$(MAGENTA)$(BOLD)"
 	@echo "   ╔═══════════════════════════════════════════════╗"

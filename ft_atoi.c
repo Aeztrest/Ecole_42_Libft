@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_check(long result, const char *str, int sign,
+static int	ft_check(long long result, const char *str, int sign,
 			size_t i)
 {
 	if (result > 922337203685477580 || (result == 922337203685477580 && (str[i]
@@ -37,7 +37,7 @@ static size_t	ft_white_space(size_t i, const char *str)
 int	ft_atoi(const char *str)
 {
 	size_t		i;
-	long		result;
+	long long	result;
 	int			sign;
 	int			re;
 
